@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "assg2"
+    }
+  },
+  "defaultProject": "assg2",
+  "cli": {
+    "analytics": "b9b9db8d-4bcc-4ade-870e-4294ba7fd634"
+  }
 }
