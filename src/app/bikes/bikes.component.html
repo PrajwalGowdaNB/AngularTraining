@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col-md-3">
+    <div class="card" *ngFor = "let bike of bikes">
+      <img [src]="bike.imageUrl" alt="image of bike" class="card-img-top" (click)='onSelectingBike(bike)'>
+      <div class="card-body">
+        <h6>{{ bike.brand}} - {{bike.model}}</h6>
+        <h4>{{bike.price}}</h4>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-9">
+    <app-bike-details [bikesDetails] = 'selectedBike'></app-bike-details>
+  </div>
+</div>

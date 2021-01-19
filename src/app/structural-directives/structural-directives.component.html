@@ -1,0 +1,52 @@
+<div class="alert alert-danger" *ngIf="message">
+  {{ message }}
+</div>
+<ul class="list-group">
+  <ng-container *ngFor="let emp of employees; index as i">
+    <li
+      class="list-group-item"
+      [ngClass]="{
+        'list-group-item-success': emp.length > 10,
+        'list-group-item-danger': emp.length <= 10
+      }"
+      [ngStyle]="{ fontStyle: emp.length > 10 ? 'italic' : 'normal' }"
+    >
+      {{ i + 1 }}.{{ emp }}
+      <button class="btn btn-outline-danger float-right" (click)="onDelete(i)">
+        DELETE
+      </button>
+    </li>
+  </ng-container>
+</ul>
+<br /><br />
+<h2>Structural directives Table list</h2>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th>Name</th>
+      <th>Phone</th>
+      <th>Email</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of emp; index as i">
+      <td>{{ employee.name }}</td>
+      <td>{{ employee.mobile }}</td>
+      <td>{{ employee.email }}</td>
+      <td>
+        <button class="btn btn-outline-danger" (click)="onRemove(i)">
+          DELETE
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br />
+<h2 class="text-center">ngSwitch</h2>
+<div [ngSwitch]="trainerName">
+  <div *ngSwitchCase="'Rajashekar'">MEAN Stack Trainer</div>
+  <div *ngSwitchCase="'Priyanka'">MERN Stack Trainer</div>
+  <div *ngSwitchCase="'Giridhar'">JavaFull Stack Trainer</div>
+  <div *ngSwitchDefault>Employee</div>
+</div>
